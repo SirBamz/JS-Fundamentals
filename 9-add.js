@@ -5,16 +5,11 @@ function add(a, b) {
 const arg1 = process.argv[2];
 const arg2 = process.argv[3];
 
-// Function to check if a string is a valid integer (strict)
-function isValidInteger(str) {
-  // Reject if undefined, empty, or not matching optional minus and digits only
-  return /^-?\d+$/.test(str);
-}
+const num1 = parseInt(arg1);
+const num2 = parseInt(arg2);
 
-if (!isValidInteger(arg1) || !isValidInteger(arg2)) {
-  console.log("Missing or invalid number");
+if (isNaN(num1) || isNaN(num2)) {
+  console.log("NaN");
 } else {
-  const num1 = parseInt(arg1, 10);
-  const num2 = parseInt(arg2, 10);
   console.log(add(num1, num2));
 }
